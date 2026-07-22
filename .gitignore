@@ -1,0 +1,41 @@
+# --- محیط پایتون ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# --- محیط‌های مجازی ---
+venv/
+env/
+.venv/
+ENV/
+
+# --- تنظیمات حساس ---
+.env
+
+# --- پایگاه داده و لاگ‌ها ---
+database/*.db
+database/*.sqlite3
+database/*.db-journal
+logs/*.log
+logs/*.log.*
+
+# --- IDE و ابزارهای ویرایشگر ---
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# --- سیستم‌عامل ---
+.DS_Store
+Thumbs.db
+
+# --- تست‌ها ---
+.pytest_cache/
+.coverage
+htmlcov/
