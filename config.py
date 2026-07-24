@@ -52,7 +52,7 @@ class Settings:
 
     bot_token: str
     admin_ids: List[int] = field(default_factory=list)
-    database_path: str = "database/shop.db"
+    database_url: str = ""
     log_level: str = "INFO"
     log_file: str = "logs/bot.log"
     currency: str = "تومان"
@@ -60,10 +60,6 @@ class Settings:
     max_cart_quantity: int = 99
     support_username: str = ""
     shop_name: str = "فروشگاه آنلاین"
-
-    @property
-    def database_full_path(self) -> Path:
-        return BASE_DIR / self.database_path
 
     @property
     def log_file_full_path(self) -> Path:
@@ -75,7 +71,7 @@ def load_settings() -> Settings:
     return Settings(
         bot_token=_get_env("BOT_TOKEN", required=True),
         admin_ids=_parse_admin_ids(_get_env("ADMIN_IDS", default="")),
-        database_path=_get_env("DATABASE_PATH", default="database/shop.db"),
+        database_url=_get_env("DATABASE_URL", required=True),
         log_level=_get_env("LOG_LEVEL", default="INFO"),
         log_file=_get_env("LOG_FILE", default="logs/bot.log"),
         currency=_get_env("CURRENCY", default="تومان"),
