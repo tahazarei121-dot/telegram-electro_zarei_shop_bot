@@ -99,7 +99,7 @@ def build_application() -> Application:
     """ساخت و پیکربندی کامل Application تلگرام به همراه تزریق وابستگی‌ها."""
 
     # --- ساخت مدیر پایگاه داده ---
-    db_manager = DatabaseManager(settings.database_full_path)
+    db_manager = DatabaseManager(settings.database_url)
 
     # --- ساخت Repository ها ---
     user_repository = UserRepository(db_manager)
