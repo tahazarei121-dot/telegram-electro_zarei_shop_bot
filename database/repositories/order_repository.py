@@ -134,7 +134,7 @@ class OrderRepository:
             FROM order_items oi
             JOIN orders o ON o.id = oi.order_id
             WHERE o.status != 'cancelled'
-            GROUP BY oi.product_id
+            GROUP BY oi.product_id, oi.product_name
             ORDER BY total_sold DESC
             LIMIT ?
             """,
